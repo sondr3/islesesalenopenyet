@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "moment/locale/nb";
-import Countdown from "react-countdown";
 
 import "./App.css";
+import useInterval from "./useInterval";
 
 moment.locale("nb");
 
@@ -39,20 +39,37 @@ const AreWeWaiting = () => {
 };
 
 function App() {
+  const [state, setState] = useState("CLOSING");
+
+  const checkState = () => {
+    if (moment(new Date()).isBefore(CLOSING)) setState("CLOSING");
+    if (moment(new Date()).isBetween(CLOSING, OPENING)) setState("BETWEEN");
+    if (moment(new Date()).isAfter(OPENING)) setState("OPEN");
+  };
+
+  useEffect(() => {
+    checkState(setState);
+  }, []);
+
+  useInterval(() => {
+    checkState(setState);
+    console.log("SPAM :D");
+  }, 1000);
+
   return (
     <>
       <main className="main">
         <h1>Er lesesalen åpen?</h1>
-        {moment(new Date()).isBefore(CLOSING) && (
-          <Countdown date={CLOSING} renderer={IsItClosed} />
-        )}
-        {moment(new Date()).isBetween(CLOSING, OPENING) && (
-          <Countdown date={OPENING} renderer={AreWeWaiting} />
-        )}
-        {moment(new Date()).isAfter(OPENING) && <h2>JA :D</h2>}
+        {state === "CLOSING" && <IsItClosed />}
+        {state === "BETWEEN" && <AreWeWaiting />}
+        {state === "OPEN" && <h2>JA :D</h2>}
       </main>
       <footer>
-        Laget med 😭 av <a href="https://www.eons.io">Sondre Nilsen</a>
+        Laget med{" "}
+        <span role="img" aria-label="Crying emoji">
+          😭{" "}
+        </span>
+        av <a href="https://www.eons.io">Sondre Nilsen</a>
       </footer>
     </>
   );
