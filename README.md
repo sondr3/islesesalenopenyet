@@ -1,3 +1,10 @@
+# Is Lesesalen Open Yet?
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae81350d-9259-47e8-89e6-8e7be9bcea1c/deploy-status)](https://app.netlify.com/sites/islesesalenopenyet/deploys)
+
+Due to the corona virus, UiB shut down our reading hall. This is a small website to 
+count down until it closes/opens again.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
