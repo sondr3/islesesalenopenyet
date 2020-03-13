@@ -7,13 +7,18 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "moment": "^2.24.0",
+    "netlify-lambda": "^1.6.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:api": "netlify-lambda serve src/lambda",
+    "build": "yarn run build:app && yarn run build:api",
+    "build:app": "react-scripts build",
+    "build:api": "netlify-lambda build src/lambda",
+    "serve": "serve build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -33,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "serve": "^11.3.0"
   }
 }
