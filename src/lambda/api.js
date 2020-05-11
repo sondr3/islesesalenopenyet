@@ -6,7 +6,7 @@ moment.locale("nb");
 const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
 const OPENING = new Date(2020, 5, 6, 8, 0, 0);
 
-const renderDate = inputDate => {
+const renderDate = (inputDate) => {
   const date = moment(inputDate);
   return date.fromNow();
 };
@@ -19,13 +19,13 @@ const checkDate = () => {
   if (moment(new Date()).isAfter(OPENING)) return "Lesesalen er ÅPEN :D";
 };
 
-exports.handler = function(event, context, callback) {
+exports.handler = function (event, context, callback) {
   callback(null, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
     },
     statusCode: 200,
-    body: checkDate()
+    body: `Lesesalen åpner om ~ dager.`,
   });
 };
