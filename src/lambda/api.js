@@ -4,7 +4,7 @@ import "moment/locale/nb";
 moment.locale("nb");
 
 const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
-const OPENING = new Date(2020, 5, 6, 8, 0, 0);
+const OPENING = new Date(2020, 5, 15, 8, 0, 0);
 
 const renderDate = (inputDate) => {
   const date = moment(inputDate);
@@ -26,6 +26,6 @@ exports.handler = function (event, context, callback) {
       "Access-Control-Allow-Origin": "*",
     },
     statusCode: 200,
-    body: `Lesesalen åpner om ~ dager.`,
+    body: checkDate(),
   });
 };

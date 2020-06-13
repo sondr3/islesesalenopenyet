@@ -8,7 +8,7 @@ import useInterval from "./useInterval";
 moment.locale("nb");
 
 const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
-const OPENING = new Date(2020, 5, 6, 8, 0, 0);
+const OPENING = new Date(2020, 5, 15, 8, 0, 0);
 
 const renderDate = (inputDate) => {
   const date = moment(inputDate);
@@ -47,24 +47,22 @@ function App() {
     if (moment(new Date()).isAfter(OPENING)) setState("OPEN");
   };
 
-  // useEffect(() => {
-  //   checkState(setState);
-  // }, []);
+  useEffect(() => {
+    checkState(setState);
+  }, []);
 
-  // useInterval(() => {
-  //   checkState(setState);
-  //   console.log("SPAM :D");
-  // }, 1000);
+  useInterval(() => {
+    checkState(setState);
+    console.log("SPAM :D");
+  }, 1000);
 
   return (
     <>
       <main className="main">
         <h1>Er lesesalen åpen?</h1>
-        {/* {state === "CLOSING" && <IsItClosed />} */}
-        {/* {state === "BETWEEN" && <AreWeWaiting />} */}
-        {/* {state === "OPEN" && <h2>JA :D</h2>} */}
-        <h2>Nei :(</h2>
-        <p>Den åpner om ~ dager.</p>
+        {state === "CLOSING" && <IsItClosed />}
+        {state === "BETWEEN" && <AreWeWaiting />}
+        {state === "OPEN" && <h2>JA :D</h2>}
       </main>
       <footer>
         Laget med{" "}
