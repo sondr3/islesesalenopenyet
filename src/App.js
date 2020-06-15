@@ -38,31 +38,40 @@ const AreWeWaiting = () => {
   );
 };
 
+const WhoKnows = () => {
+  return (
+    <>
+      <h2>Ingen vet :(</h2>
+      <p>Du får smøre deg med tålmodighet...</p>
+    </>
+  );
+};
+
 function App() {
-  const [state, setState] = useState("CLOSING");
+  // const [state, setState] = useState("CLOSING");
 
-  const checkState = () => {
-    if (moment(new Date()).isBefore(CLOSING)) setState("CLOSING");
-    if (moment(new Date()).isBetween(CLOSING, OPENING)) setState("BETWEEN");
-    if (moment(new Date()).isAfter(OPENING)) setState("OPEN");
-  };
+  // const checkState = () => {
+  //   if (moment(new Date()).isBefore(CLOSING)) setState("CLOSING");
+  //   if (moment(new Date()).isBetween(CLOSING, OPENING)) setState("BETWEEN");
+  //   if (moment(new Date()).isAfter(OPENING)) setState("OPEN");
+  // };
 
-  useEffect(() => {
-    checkState(setState);
-  }, []);
+  // useEffect(() => {
+  //   checkState(setState);
+  // }, []);
 
-  useInterval(() => {
-    checkState(setState);
-    console.log("SPAM :D");
-  }, 1000);
+  // useInterval(() => {
+  //   checkState(setState);
+  // }, 1000);
 
   return (
     <>
       <main className="main">
         <h1>Er lesesalen åpen?</h1>
-        {state === "CLOSING" && <IsItClosed />}
-        {state === "BETWEEN" && <AreWeWaiting />}
-        {state === "OPEN" && <h2>JA :D</h2>}
+        {/* {state === "CLOSING" && <IsItClosed />} */}
+        {/* {state === "BETWEEN" && <AreWeWaiting />} */}
+        {/* {state === "OPEN" && <h2>JA :D</h2>} */}
+        <WhoKnows />
       </main>
       <footer>
         Laget med{" "}
