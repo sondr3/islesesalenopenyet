@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
-import "moment/locale/nb";
+import moment from 'moment';
+import 'moment/locale/nb';
+import React from 'react';
+import './App.css';
 
-import "./App.css";
-import useInterval from "./useInterval";
+moment.locale('nb');
 
-moment.locale("nb");
+// const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
+// const OPENING = new Date(2020, 5, 15, 8, 0, 0);
 
-const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
-const OPENING = new Date(2020, 5, 15, 8, 0, 0);
+// const renderDate = (inputDate) => {
+//   const date = moment(inputDate);
+//   return date.fromNow();
+// };
 
-const renderDate = (inputDate) => {
-  const date = moment(inputDate);
-  return date.fromNow();
-};
+// const IsItClosed = () => {
+//   return (
+//     <>
+//       <h2>Ja!</h2>
+//       <div>
+//         <p>Du kan fortsatt hente tingene dine på lesesalen.</p>
+//         <p>
+//           Men den stenger <strong>{renderDate(CLOSING)}</strong>.
+//         </p>
+//       </div>
+//     </>
+//   );
+// };
 
-const IsItClosed = () => {
-  return (
-    <>
-      <h2>Ja!</h2>
-      <div>
-        <p>Du kan fortsatt hente tingene dine på lesesalen.</p>
-        <p>
-          Men den stenger <strong>{renderDate(CLOSING)}</strong>.
-        </p>
-      </div>
-    </>
-  );
-};
-
-const AreWeWaiting = () => {
-  return (
-    <>
-      <h2>Nei :(</h2>
-      <p>Den åpner {renderDate(OPENING)}.</p>
-    </>
-  );
-};
+// const AreWeWaiting = () => {
+//   return (
+//     <>
+//       <h2>Nei :(</h2>
+//       <p>Den åpner {renderDate(OPENING)}.</p>
+//     </>
+//   );
+// };
 
 const WhoKnows = () => {
   return (
@@ -74,9 +72,9 @@ function App() {
         <WhoKnows />
       </main>
       <footer>
-        Laget med{" "}
+        Laget med{' '}
         <span role="img" aria-label="Crying emoji">
-          😭{" "}
+          😭{' '}
         </span>
         av <a href="https://www.eons.io">Sondre Nilsen</a>
       </footer>
