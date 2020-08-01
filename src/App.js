@@ -36,11 +36,11 @@ moment.locale('nb');
 //   );
 // };
 
-const WhoKnows = () => {
+const Soon = () => {
   return (
     <>
-      <h2>Ingen vet :(</h2>
-      <p>Du får smøre deg med tålmodighet...</p>
+      <h2>Den er stengt for sommeren</h2>
+      <p>Men alt tilsier at den skal åpne til semesterstart...</p>
     </>
   );
 };
@@ -69,9 +69,9 @@ function App() {
         {/* {state === "CLOSING" && <IsItClosed />} */}
         {/* {state === "BETWEEN" && <AreWeWaiting />} */}
         {/* {state === "OPEN" && <h2>JA :D</h2>} */}
-        <WhoKnows />
+        <Soon />
       </main>
-      <footer>
+      <footer style={{ marginBottom: '12px' }}>
         Laget med{' '}
         <span role="img" aria-label="Crying emoji">
           😭{' '}
