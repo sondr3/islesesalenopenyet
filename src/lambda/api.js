@@ -4,7 +4,7 @@ import "moment/locale/nb";
 moment.locale("nb");
 
 const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
-const OPENING = new Date(2020, 5, 15, 8, 0, 0);
+const OPENING = new Date(2020, 7, 17, 8, 0, 0);
 
 const renderDate = (inputDate) => {
   const date = moment(inputDate);
