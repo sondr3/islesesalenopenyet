@@ -6,8 +6,8 @@ import "./App.css";
 
 moment.locale("nb");
 
-const CLOSING = new Date(2020, 2, 13, 16, 0, 0);
-const OPENING = new Date(2020, 7, 17, 8, 0, 0);
+const CLOSING = new Date(2020, 10, 7, 0, 0, 0);
+const OPENING = new Date(2020, 10, 23, 8, 0, 0);
 
 const renderDate = (inputDate) => {
   const date = moment(inputDate);
@@ -32,7 +32,7 @@ const OpeningSoon = () => {
   return (
     <>
       <h2>Nei...</h2>
-      <p>Den åpner {renderDate(OPENING)} med redusert kapasitet.</p>
+      <p>Den åpner kanskje {renderDate(OPENING)} med redusert kapasitet.</p>
     </>
   );
 };
