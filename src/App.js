@@ -6,8 +6,8 @@ import "./App.css";
 
 moment.locale("nb");
 
-const CLOSING = new Date(2020, 10, 7, 0, 0, 0);
-const OPENING = new Date(2020, 10, 23, 8, 0, 0);
+const CLOSING = new Date(2020, 10, 23, 0, 0, 0);
+const OPENING = new Date(2020, 11, 6, 8, 0, 0);
 
 const renderDate = (inputDate) => {
   const date = moment(inputDate);
