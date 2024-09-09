@@ -40,14 +40,7 @@ const OpeningSoon = () => {
 const Open = () => {
   return (
     <>
-      <h2>Ja!</h2>
-      <p>
-        Men det er begrenset kapasitet, se{" "}
-        <a href="https://www.facebook.com/groups/informatikk/permalink/10158472759908396/">
-          her
-        </a>{" "}
-        for mer informasjon.
-      </p>
+      <h2>Ja! 🎉</h2>
     </>
   );
 };
